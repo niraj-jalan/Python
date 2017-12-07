@@ -161,7 +161,31 @@ def merge_calendar(list_of_tuples):
     print(out)
 
 
-merge_calendar(list_of_tuples=[(1, 2), (2, 3)])
-merge_calendar(list_of_tuples=[(1, 5), (2, 3)])
-merge_calendar(list_of_tuples=[(1, 10), (2, 6), (3, 5), (7, 9)])
-merge_calendar(list_of_tuples=[(3, 5), (4, 8), (10, 12), (0, 1), (9, 10)])
+#merge_calendar(list_of_tuples=[(1, 2), (2, 3)])
+#merge_calendar(list_of_tuples=[(1, 5), (2, 3)])
+#merge_calendar(list_of_tuples=[(1, 10), (2, 6), (3, 5), (7, 9)])
+#merge_calendar(list_of_tuples=[(3, 5), (4, 8), (10, 12), (0, 1), (9, 10)])
+
+
+def calcMaxProfit(n):
+  buy = None
+  sell = None
+  
+  for price in n:
+    if buy is not None and price < buy:
+      print('buy at %s and sell at %s'%(buy,sell))
+      buy, sell = price, None
+    else:
+      buy = price if buy is None else buy
+      sell = price if sell < price else sell
+   
+  print('buy at %s and sell at %s'%(buy,sell))
+
+
+calcMaxProfit(n = [100, 180, 260, 310, 40, 535, 695])
+   
+
+
+
+
+

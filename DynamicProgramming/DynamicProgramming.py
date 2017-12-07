@@ -56,9 +56,25 @@ def fibonacci(n, history):
     else:
         fib = fibonacci(n - 1, history) + fibonacci(n - 2, history)
         history[n] = fib
-        print(fib, end=',')
+        print('%s'%fib)
         return fib
 
+      
+def fibonacciDP(n):
+  if n == 0 or n == 1 :
+    return 1
+  else:
+    a = 1
+    b = 2
+    for i in range(2, n):
+      c = a + b
+      a = b
+      b = c
+  print(b)
+    
+print(fibonacci(4, history={}))
+fibonacciDP(4)
+#print(1, end=',')
 
 def calc_ways_2_climb(n):
     if n < 0:
@@ -67,11 +83,7 @@ def calc_ways_2_climb(n):
         return 1
     return calc_ways_2_climb(n - 1) + calc_ways_2_climb(n - 2) + calc_ways_2_climb(n - 3)
 
-
 # print(calc_ways_2_climb(3))
-print(1, end=',')
-fibonacci(30, history={})
-
 
 
 # A Naive recursive Python program to fin minimum number
