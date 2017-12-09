@@ -21,6 +21,7 @@ def fibonacci(n):
             sumValue = sumValue + b
     return sumValue
 
+
 '''
 # This solution used sqrt function which takes addition logN time. The second solution to iterate over factor seems more efficient. 
 def find_greatest_prime_factor(num):
@@ -38,10 +39,12 @@ def find_greatest_prime_factor(num):
     #num is prime - return num
     return num
 '''
+
+
 def largest_prime_factor(num, div=2):
     while div < num:
-        if num % div == 0 and num/div > 1:
-            num = num /div
+        if num % div == 0 and num / div > 1:
+            num = num / div
             div = 2
         else:
             div = div + 1
